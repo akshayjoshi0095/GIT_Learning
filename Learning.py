@@ -11,8 +11,15 @@ driver.quit()                   ### close all the opened in the focussed tab
 
 
 ''' 
-    
->>  drag_n_drop, forward, bacjword, refresh, click, right_click, 
+>> imp imports
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.ui import WebDriverWait 
+	
+	
+>>  drag_n_drop, forward, bacjword, refresh, click, right_click, scroll
     
 >>  Conditional Command     ### always return True/False
     > is_enabled()   
@@ -37,5 +44,7 @@ Explicit Wait: Explicit waits are used to halt the execution till the time a par
                 Unlike Implicit waits, explicit waits are applied for a particular instance only.
     
     
+	
+	
     
 '''
