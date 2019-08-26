@@ -118,4 +118,6 @@ Gitbash Cmds
 	$ git clone 'giturl'		## this cmd will bring only the content of master branch into your local machine
 	$ git branch newbranchname	## this cmd will overrides the content brought as part of master branch and chnge the content to 	    the content present in branch
 	
+## learning branch concept of git
+	
 '''
