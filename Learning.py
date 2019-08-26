@@ -105,5 +105,5 @@ Gitbash Cmds
 # To take the latest project into a local repository which is already linked to remote repository from the remote repository
 	$ git pull origin master
 	
-    
+    hey alpha learning git
 '''
