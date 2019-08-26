@@ -104,6 +104,18 @@ Gitbash Cmds
 
 # To take the latest project into a local repository which is already linked to remote repository from the remote repository
 	$ git pull origin master
+
+# To check the no of branch present in the repository
+	$ git branch
+
+# To create a new branch
+	$ git branch newbranchname
+
+# To enter into newly created branch
+	$ git branch newbranchname
+
+# way to take the content of branch into our machine
+	$ git clone 'giturl'		## this cmd will bring only the content of master branch into your local machine
+	$ git branch newbranchname	## this cmd will overrides the content brought as part of master branch and chnge the content to 	    the content present in branch
 	
-    hey alpha learning git
 '''
