@@ -44,7 +44,66 @@ Explicit Wait: Explicit waits are used to halt the execution till the time a par
                 Unlike Implicit waits, explicit waits are applied for a particular instance only.
     
     
+
 	
+	
+Gitbash Cmds
+
+# To know the git version
+	$ git --version
+	
+# To configure username
+	$ git config global --user.name 'Type username'
+
+#To configure useremail
+	$ git config global --user.email 'Type email'
+
+# To retrieve configured username
+	$ git config user.name
+
+# To retrieve configured useremial
+	$ git config user.email
+	
+# To enter into particular directory
+	$ cd D:
+	
+# To create a foldername
+	$ mkdir 'foldername'
+	
+# To enter into that folder
+	$ cd foldername/
+	
+# To know the current location
+	$ pwd
+	
+# for creating local repository
+	$ git init
+	
+# To check how many files is in untracked status and staged status
+	$ git status
+
+# To convert any file from untracked status to statged status
+	$ git add filename				#### for making any particular file staged
+	$ git add .						#### for making all file staged
+	
+# To convert all the staged status files to tracked status
+	$ git commit -m 'Type any message'
+
+# To know whether our local repository to linked to any remote repository
+	$ git remote -v
+	## if already linked would be present then this cmd will return fetch and push url
+
+# To linked local repository to any remote repository
+	$ git remote add origin 'remote repository url'				### after this cmd give $ git remote -v and check
+
+# To push all the tracked file(changes made into tracked file) in remote repository
+	$ git push origin master
+	
+# To take any project from remote repository into local repository
+	$ git clone 'user git clone url'
+
+# To take the latest project into a local repository which is already linked to remote repository from the remote repository
+	$ git pull origin master
 	
     
 '''
