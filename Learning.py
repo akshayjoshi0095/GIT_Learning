@@ -49,6 +49,18 @@ Explicit Wait: Explicit waits are used to halt the execution till the time a par
 	
 Gitbash Cmds
 
+Git is a source code management software
+TFS= team foundation server by microsoft
+SVN by apache
+
+featues-Tracking of files, Versioning,compare code, Merge branch and compare branch
+
+
+Github- is webbased central repository hosting services
+
+My git clone url -	https://github.com/akshayjoshi0095/GIT_Learning.git
+
+
 # To know the git version
 	$ git --version
 	
