@@ -112,12 +112,16 @@ Gitbash Cmds
 	$ git branch newbranchname
 
 # To enter into newly created branch
-	$ git branch newbranchname
+	$ git checkout newbranchname
 
 # way to take the content of branch into our machine
 	$ git clone 'giturl'		## this cmd will bring only the content of master branch into your local machine
 	$ git branch newbranchname	## this cmd will overrides the content brought as part of master branch and chnge the content to 	    the content present in branch
 	
-## learning branch concept of git
+# way to merge the new changes made in the local branch
+	$ git checkout master
+	$ git merge branchname     #### that branchname whose content you want to push into the master branch and update it.
+	$ git push -u origin master
+	
 	
 '''
