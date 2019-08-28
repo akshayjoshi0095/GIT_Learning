@@ -1,13 +1,19 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support import select
+from selenium.webdriver.support.ui import WebDriverWait
+
+
 import time
 
 
 driver=webdriver.Chrome(executable_path='path where your chrome driver exist upto the name + extension of file')
 
-driver.close()                  ### close only the focussed browser
-driver.quit()                   ### close all the opened in the focussed tab
+driver.close()                  ### close only the focussed tab only if only one tab is open in the window than window will get closed
+driver.quit()                   ### close the focussed window
 
 
 ''' 
@@ -19,10 +25,48 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait 
 	
 	
->>  drag_n_drop, forward, bacjword, refresh, click, right_click, scroll
+>>Actions func (from selenium.webdriver.common.action_chains import ActionChains)
+
+    >>Drag n drop
+        >action=ActionChains(self.driver)
+        >action.drag_and_drop(ele1,ele2).perform()
     
->>  Conditional Command     ### always return True/False
-    > is_enabled()   
+    >>Drag n drop
+        >action=ActionChains(self.driver)
+        >action.click_and_hold(ele1).move_to_element(ele2).release(ele2).perform()
+        
+    >>Rightclick
+        >action=ActionChains(self.driver)
+        >action.context_click(ele1).perform()
+    
+    >>Doubleclick
+        >action=ActionChains(self.driver)
+        >action.double_click(ele1).perform()
+   
+        
+>>Navigate function
+    
+    >forward
+        >self.driver.forward()
+    
+    >back
+        >self.driver.back()
+    
+    >Refresh
+        >self.driver.refresh()
+        
+    >scroll
+        >ele1.send_keys(Keys.END)
+        >time.sleep(2)
+        >ele1.send_keys(Keys.HOME)
+            
+    >scroll
+        >self.driver.execute_script(javascript)
+        
+        
+    
+>>  Conditional Command     ### always return True/False  but while using them in automation we have to give condition like this  
+    > is_enabled()              e.g element1.is_enabled()!='True' or element1.is_enabled()=='True'
     >is_selected()
     >is_dispalyed()
     
@@ -33,17 +77,60 @@ from selenium.webdriver.support.ui import WebDriverWait
     self.driver.find_element_by_xpath(xpath).text                  # to get the text 
     
     
->>Waits
-    >self.driver.implicitly_wait(sec)   
+>>Waits    
+    >from selenium.webdriver.support.ui import WebDriverWait
+    >from selenium.webdriver.support import expected_conditions
+    >from selenium.webdriver.common.by import By
     
 Implicit Wait: Implicit waits are used to provide a default waiting time (say 30 seconds) between each consecutive test step/command across the
                 entire test script. Thus, the subsequent test step would only execute when the 30 seconds have elapsed after executing the previous 
                 test step/command.
-
+    >>self.driver.implicitly_wait(sec)
+    
+    
 Explicit Wait: Explicit waits are used to halt the execution till the time a particular condition is met or the maximum time has elapsed. 
                 Unlike Implicit waits, explicit waits are applied for a particular instance only.
+    >>wait=WebDriverWait(self.driver,10)
+      wait.until(expected_conditions.element_to_be_clickable((By.XPATH,next)))
+ 
+ 
+>>Select Function (from selenium.webdriver.support.ui import Select)  
+    drp=Select(ele2)
+    drp.select_by_visible_text('text')
+    drp.select_by_index(give no. as per the html)
+    drp.select_by_value('value as per html')
+
+    l=drp.options
+    print 'no of option in dropdown', len(l)
+    for i in l:
+        print i.text
     
     
+>> Way to handle alert window
+    >self.driver.switch_to_alert().accept()             ### it will close the pop-up by clicking on ok
+    >self.driver.switch_to_alert().dismiss()            ### it will close the pop-up by clicking on cancle
+    
+    
+>>Way to switch b/t different tabs open in a single window:
+    >self.driver.current_window_handle                  ### retun the handle of currently focussed window
+    >handles=self.driver.window_handles                 ### a list containing all the window handles will get created
+    >self.driver.switch_to_window(handle[n])            ### it will switch the focus into the nth window
+    
+
+>> frames/iframes Way to switch between them
+    >the concept to toggeling b/t frames is to switch to the req frame, perform task and then again come back to the main page and then move to the 
+    another frame and perform your task
+    >we can switch to any frame present on the page by it name, id , index_no.
+    
+    >Way to switch to any frame
+        >self.driver.switch_to_frame('name of frame')
+        >self.driver.switch_to_frame('id')
+        >self.driver.switch_to_frame(index_no)
+       
+    >Way to come back from any frame to the main page
+        >self.driver.switch_to.default_content()        ### it always points to the main page so no need to pass any xpath/id
+    
+	
 
 	
 	
