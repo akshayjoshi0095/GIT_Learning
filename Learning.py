@@ -221,6 +221,15 @@ My git clone url -	https://github.com/akshayjoshi0095/GIT_Learning.git
 	$ git checkout master
 	$ git merge branchname     #### that branchname whose content you want to push into the master branch and update it.
 	$ git push -u origin master
+
+# way to delete branch 
+>> for deleting we have to be on our master branch
 	
+	git branch -d branch_name
+	git branch -D branch_name
+	
+The -d option stands for --delete, which would delete the local branch, only if you have already pushed and merged it with your remote branches.
+The -D option stands for --delete --force, which deletes the branch regardless of its push and merge status, so be careful using this one!
+
 	
 '''
