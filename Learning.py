@@ -232,7 +232,11 @@ The -d option stands for --delete, which would delete the local branch, only if 
 The -D option stands for --delete --force, which deletes the branch regardless of its push and merge status, so be careful using this one!
 
 
-notthing to commit
-
+## way to update any local branch with the master branch
+	> checkout to that branch
+	> $ git pull
+	> $ git merge master/any other branchname
+		>> after this cmd local files of current branch will get updated with the latest files of master/any other branchname as u defined >>not your current branch
+		>> now u need to push this data to the current branch by $ git push origin current_branch_name
 	
 '''
