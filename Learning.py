@@ -197,6 +197,8 @@ My git clone url -	https://github.com/akshayjoshi0095/GIT_Learning.git
 
 # To push all the tracked file(changes made into tracked file) in remote repository
 	$ git push origin master
+	>> after this cmd local files in the pc will get updated with the latest files of master/any other branchname as u defined >>not your current branch in git repository
+	>> now u need to introduce your change and push this data to the current branch by $ git push origin current_branch_name and then merge this branch with the master
 	
 # To take any project from remote repository into local repository
 	$ git clone 'user git clone url'
@@ -236,8 +238,9 @@ The -D option stands for --delete --force, which deletes the branch regardless o
 	> checkout to that branch
 	> $ git pull
 	> $ git merge master/any other branchname
-		>> after this cmd local files of current branch will get updated with the latest files of master/any other branchname as u defined >>not your current branch
-		>> now u need to push this data to the current branch by $ git push origin current_branch_name
+		>> after this cmd local files in the pc will get updated with the latest files of master/any other branchname as u defined >>not your current branch in git repository
+		>> now u need to introduce your change and push this data to the current branch by $ git push origin current_branch_name and then merge this branch with the master
+	
 	
 ## way to revert the last commit
 
@@ -248,5 +251,6 @@ Note the --soft flag: this makes sure that the changes in undone revisions are p
 
 If you don't want to keep these changes, simply use the --hard flag. Be sure to only do this when you're sure you don't need these changes anymore.
 >>$ git reset --hard HEAD~1	
+	
 	
 '''
