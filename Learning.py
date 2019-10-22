@@ -253,4 +253,85 @@ If you don't want to keep these changes, simply use the --hard flag. Be sure to 
 >>$ git reset --hard HEAD~1	
 	
 	
+	
+----------------------------------------------------------------------------------------------------------------
+
+Python Framework
+
+1-Python unittest framework
+    > we have to import unittest module
+    > Class must inherit unittest.TestCase
+    > each method act as one testcase 
+    > each methodname must start with test as suffix
+    > .py_file and class can be of any name
+
+## way of skipping testcase 
+    1-@unittest.skip(reason)        eg.- @unittest.skip('learning sckipping of testcase')
+    2-@unittest.skipIf(condition,reason)        eg.-@unittest.skipIf(1==1,'learning sckipping of testcase')
+    3-@unittest.skipUnless(condition,reason)
+
+
+Common universal Methods  
+setUp()
+    > method level
+    >this executes at method levels, means it will automatically run each time before the execution of any method
+    
+tearDown()
+    > method level
+    > this executes at method levels, means it will automatically run each time after the execution of any method 
+
+setUpClass()
+    > class level
+    >this executes at class levels, means it will automatically run each time before the execution of any class
+    
+tearDownClass()
+    > class level
+    > this executes at method levels, means it will automatically run each time after the execution of any method
+    
+setUpModule()
+    > module level
+    
+tearDownModule()
+    > module level
+    
+
+2-Python pytest  framework
+    > We have to import pytest
+    > the .py filename must start with test
+    > each function in the file must start or end with test
+    > way of creating setUp function in pytest
+        @pytest.fixture
+        def func_name():
+            print 'this will get executed before the execution of each func but we need to link this fuc with all the 
+                   before which we want it to get executed'
+        
+    > way of creating setUp+tearDown function in pytest
+        @pytest.yield_fixture()
+        def func_name():
+            print 'this will get executed before the execution of each func but we need to link this fuc with all the 
+                   before which we want it to get executed'
+            yield
+            print('the action written after yield keyword will get executed at the end of each function')
+	
+	
+	
+	
+	
 '''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
