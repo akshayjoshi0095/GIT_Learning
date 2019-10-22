@@ -252,9 +252,45 @@ Note the --soft flag: this makes sure that the changes in undone revisions are p
 If you don't want to keep these changes, simply use the --hard flag. Be sure to only do this when you're sure you don't need these changes anymore.
 >>$ git reset --hard HEAD~1	
 	
+<<<<<<< HEAD
 	
 	
-----------------------------------------------------------------------------------------------------------------
+
+Imp Cmds
+1-Cmd for parallel execution :
+    we have to go upto that location where all the robotfile exist and open cmd
+    
+    >pabot --processes n --report_generation_location *.robot
+        eg. pabot --processes 2 --outputdir D:\TRY\Multi_Threading\ *.robot
+    NOTE:- This cmd will run all the robot file present at the loaction parallely and generate report.html, log.html, output.xml at the defined outputdir
+
+    >pabot --processes n --report_generation_location\Result *.robot
+        eg. pabot --processes 2 --outputdir D:\TRY\Multi_Threading\Result *.robot
+    NOTE:- This cmd will run all the robot file present at the loaction parallely and generate report.html, log.html, output.xml 
+           + suite specific folder, inside Result folder which will get create automatically at the defined location.
+    
+    > n stand for no of file u want to execute parallel
+    > this cmd is only applicable for the execution of robot files.
+
+
+2- Cmd 
+
+pytest-html
+>Cmd to generate html reports of unittestframework 
+
+Note:- Give all path with double backslash
+
+1-pytest -v -s filename_with_location_which_u_want_to_run    
+    >>> this will show passed and failed over cmd only means no report would get generate
+            
+2-pytest -v -s --html=report.html --self-contained-html filename_with_location_which_u_want_to_run   
+    >> this will show passed and failed over cmd as well as a report will get generate at the default current_directory location, 
+        as we haven't defined report generation location of our choice
+    
+pytest -v -s --html=reportfile_name_with_location.html --self-contained-html filename_with_location_which_u_want_to_run
+    >> this will show passed and failed over cmd as well as a report will get generate at the default location, 
+	>> .\ represents current directory
+
 
 Python Framework
 
@@ -313,10 +349,9 @@ tearDownModule()
             yield
             print('the action written after yield keyword will get executed at the end of each function')
 	
+
 	
-	
-	
-	
+
 '''
 
 
