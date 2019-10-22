@@ -252,9 +252,10 @@ Note the --soft flag: this makes sure that the changes in undone revisions are p
 If you don't want to keep these changes, simply use the --hard flag. Be sure to only do this when you're sure you don't need these changes anymore.
 >>$ git reset --hard HEAD~1	
 	
----------------------------------------------------------------
+
 
 Imp Cmds
+
 1-Cmd for parallel execution :
     we have to go upto that location where all the robotfile exist and open cmd
     
@@ -270,7 +271,7 @@ Imp Cmds
     > n stand for no of file u want to execute parallel
     > this cmd is only applicable for the execution of robot files.
 
------------------------------------------------------------------------------------------
+	
 2- Cmd 
 
 pytest-html
@@ -290,4 +291,6 @@ pytest -v -s --html=reportfile_name_with_location.html --self-contained-html fil
 	>> .\ represents current directory
 
 
+	
+## understanding resolving merging conflicts
 '''
