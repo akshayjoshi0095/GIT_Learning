@@ -26,3 +26,24 @@ def sumzero2(l):
 
 
 l = [-5,-4,-3,0,2,4,8,10]
+
+
+### Bubble sort
+# in ranadom and reversed - O(n**2)
+#in sorted - O(n)
+
+def bubble_sort(l):
+    for i in range(len(l)-1,0,-1):
+        swap = 0
+        for j in range(i):
+            if l[j] > l[j+1]:
+                l[j],l[j+1] = l[j+1],l[j]
+                swap += 1
+        if swap == 0:
+            break
+    return l
+
+sample_list = [10, 50, 50, 100, 100, 100, 20, 30, 40, 20, 30, 90, 40]
+
+print(bubble_sort(sample_list))
+
